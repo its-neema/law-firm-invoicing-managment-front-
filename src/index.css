@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@layer utilities {
+  .pushable {
+    background: hsl(208deg 100% 32%);
+    border-radius: 25px;
+    border: none;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Inter";
+    padding: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline-offset: 2px;
+  }
+  .front {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: #4169e1;
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
+  }
+  .front2 {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: hsl(202 99% 38%);
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .transform {
+    transform: translateY(-200px);
+  }
+
+  .header {
+    animation: bounce 4s linear infinite;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  @media (max-width: 639px) {
+    .front {
+      display: block;
+      padding: 14px 12px;
+      border-radius: 25px;
+      font-size: 1.15rem;
+      background: #4169e1;
+      color: white;
+      font-family: "Inter";
+      transform: translateY(-6px);
+    }
+  }
+}
+
+.wrapper {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+ /* ==========MEDIA QUERIES(MEDIUM DEVICES) ========*/
+ @media screen and (max-width:1024px){
+  .container{
+      width: var(--container-width-md);
+  }
+  section{
+      margin-top: 6rem;
+  }
+  .wrapper {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========MEDIA QUERIES(SMALL DEVICES) ========*/
+@media screen and (max-width:600px){
+  .container{
+      width: var(--container-width-sm);
+  }
+  section > h2{
+      margin-top: 2rem;
+  }
+  .wrapper {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .landimage{
+    display: none;
+  }
+}
